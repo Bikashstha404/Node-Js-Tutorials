@@ -1,0 +1,177 @@
+embedded v8 with c++ and node js is created
+
+Node JS is a open source, cross-platform, run time environment for javascript.
+
+4. Modules in Node js
+./ --> current directory
+renaming function ={ addfn: add, subfn: sub}
+
+
+
+5. File handling in Node js
+.writeFileSync("path and filename", "anything you can write") --> create file syncho..
+.writeFile("path and filename", "anything you can write", (err)=>{}) --> needed a callback function
+
+differences between them ---> blocking and non-blocking request(next video)
+
+let result = fs.readFileSync("./contact.txt", "utf-8") --returns the data if used syncronouss
+
+fs.readFile("./contact.txt","utf-8",(err, result)=>{} --> doesn't return the data but uses callback
+
+fs.appendFileSync()
+
+fs.cpSync("real file path", "copied file path and name")
+fs.unlink() --> delte files
+
+fs.statSync('./test.txt) --> show all the information on that text file
+fs.mkdir() if want to make multile {recursive: true}
+
+
+
+
+6. How Node js works?
+
+client make request to the server
+all the request get into the EventQueue
+Then this all goes to EvenLoop and if request is there in a FIFO principle
+There could be two request blocking operation (Synchornous Task) and non blocking operations (Asynchornous task)
+
+If non blocking operations {
+	then it will process and send the response to the user
+}
+
+if blocking operations {
+	It goes to the thread pool (thread pool is a pool of thread, thread refers to workers that will work for you) defaul thread pool size == 4, you can increase its size accordings to your cpus
+	and it will ask for the thread if available and assign it and return the result
+}
+
+
+7. Building http server
+const myServer = http.createServer((req, res)=>{ swtich case url}
+
+
+8. Handling Url in Node js
+
+9. Https Methods
+get --> get some data from the server 
+post --> send some data to the server and create a database through it
+put --> upload file or i
+patch --> update the data
+delete --> delete the data
+
+10. Express Framework
+
+
+11. Versioning work in nodejs
+
+4.18.2.
+
+1st part --> 4 Major realease or breaking update (if existing don't update)
+2nd Part --> 18 Recommened bug fixes or new features added
+3rd Part --> 2 This is minor fixes(Optional update)
+
+^ (carot symbol) --> Install all Recommended and minor fixes automatically
+
+
+12. What is Rest API?
+
+Restfull API (Representational State Transfer)
+Rules
+1. Works on Server and Client Architecture (not dependent on each other)
+SSR - server side rendering
+CSR - client side rendering 
+XML and JSON gives data as a raw and client frontend will render
+if browser server will render html data
+2. Always respect HTTP methods
+
+
+13. Building Rest API using Node and Express
+
+Dynamic Path paramters
+Get /api/user/:id
+:id this is a variable	
+
+14. Introduction to Postman for Rest APIs
+
+... --> (spread syntax) is used to expand elements (objects, arrays, or iterables) into places where multiple elements are expected.
+So, the use of the spread syntax with the triple dots (...) is necessary in this case to create a new object with the properties of body, along with an added id property.	
+
+15. Express Middlewares
+
+app.user() --> middlewares
+
+16. HTTP headers in API
+
+
+HTTP headers carry information for the Request and the Response Body
+It is a field of an HTTP request or response that passes additional context and metadata about the request or response.
+
+res.setHeaders(key, value) --> setting headers
+Always add X to custom headers
+
+express.urlencoded --> check headers type when content is x-www-form
+express.json --> decoded the json format
+
+17. HTTP Status Code
+
+404 -Not found
+100 - 199 --> Information responses
+200 - 299 --> Successful responses
+201 -> created
+202 --> accepted
+300 - 399 --> Redirection responses
+400 - 499 --> Client Error responses
+400 --> Bad Request
+401 --> Unauthorized
+403 --> Forbidden
+404 --> Not Found
+500 - 599 --> Server Error responses
+
+
+18. Getting Started with Mongodb
+
+Mongodb
+-No Sql Document Based Database
+-Strong Support for Aggregation Pipes
+-Works on BSON Format
+-Best for Node applications
+
+Databases
+SQL- Structed Query Langauge
+SQL - works on realtions and table
+No SQL - works on documents
+
+We have collections in Mongodb 
+
+show dbs - show all the databases
+use db - switch the databases
+show collections - show all the collections availabe on the database
+db.coll.find({}) - show all the documents
+db.coll.insert({}) - insert the documents 
+
+19. Connecting Node js with Mongodb
+
+Schema - Define the Structure
+	Schema -Model
+	Using Model we do CRUD operation
+
+timestamp: true --> shows created date and updated date
+
+
+20. Model View Controller
+
+../ --> go back in directory
+
+21. Custom URL Shortner
+
+POST /URL - Generates a new short URL and returns the shortened URL in the format example.come/random-id
+GET /:id --> Redirects the user to the original URL
+GET /URL/analytics/:id --> Returns the clicks for the provided short id.
+
+22. Building Node.js Authentication
+
+Statefull --> Which maintains state or data or server side
+Stateless --> which has no state
+
+
+
