@@ -36,7 +36,7 @@ app.get("/:shortId", async(req, res)=>{
             timestamp: Date.now()
         }
     }})
-    res.end("hello")
+    
     res.redirect(entry.redirectUrl)
 })
 app.listen(PORT,()=> console.log(`Server Started at PORT: ${PORT}`))
